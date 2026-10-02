@@ -1,0 +1,10 @@
+export const contacts = [
+  { id: 'ct-1', name: 'Aditi Rao', company: 'BrightPixel Labs', role: 'Marketing Head', email: 'aditi@brightpixel.in', phone: '+91 91234 56780', clientId: 'cl-1' },
+  { id: 'ct-2', name: 'Karan Mehta', company: 'CloudMatrix Technologies', role: 'COO', email: 'karan.mehta@cloudmatrix.io', phone: '+91 98202 34567', clientId: 'cl-2' },
+  { id: 'ct-3', name: 'Neha Kapoor', company: 'InnoSoft Systems', role: 'Product Director', email: 'neha@innosoft.com', phone: '+91 99887 65432', clientId: 'cl-3' },
+  { id: 'ct-4', name: 'Suresh Pillai', company: 'Meridian Retail Pvt Ltd', role: 'Director', email: 'suresh@meridianretail.in', phone: '+91 90040 11223', clientId: 'cl-4' },
+  { id: 'ct-5', name: 'Ritu Malhotra', company: 'Zenith Financial Group', role: 'VP Operations', email: 'ritu.malhotra@zenithfin.com', phone: '+91 97654 32109', clientId: 'cl-5' },
+  { id: 'ct-6', name: 'Farhan Sheikh', company: 'Coastal Hospitality Inc', role: 'General Manager', email: 'farhan@coastalhospitality.com', phone: '+91 89230 44556', clientId: 'cl-6' },
+  { id: 'ct-7', name: 'Vikram Anand', company: 'Orbit Logistics', role: 'Founder', email: 'vikram.anand@orbitlogistics.in', phone: '+91 98450 12233', clientId: null },
+  { id: 'ct-8', name: 'Ishaan Kapoor', company: 'Vertex Realty', role: 'Director', email: 'ishaan@vertexrealty.com', phone: '+91 90123 88990', clientId: null },
+]

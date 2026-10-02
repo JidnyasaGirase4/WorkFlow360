@@ -1,0 +1,19 @@
+// status: 'upcoming' (shown as "Scheduled" in the admin UI) | 'completed' | 'cancelled'
+export const MEETING_TYPES = ['Video Call', 'Phone Call', 'In Person']
+
+export const meetings = [
+  { id: 'mtg-1', title: 'Sprint Review — CRM Implementation', client: 'CloudMatrix Technologies', project: 'CRM Implementation', date: '2026-09-24', time: '11:00', type: 'Video Call', link: 'https://meet.workflow360.app/crm-sprint-review', participants: ['Jay Girase', 'Amit Kulkarni', 'Karan Mehta'], status: 'upcoming', notes: 'Demo lead pipeline and client portal invoice view.' },
+  { id: 'mtg-2', title: 'Discovery Kickoff — E-commerce Platform', client: 'Meridian Retail Pvt Ltd', project: 'E-commerce Platform', date: '2026-09-23', time: '15:30', type: 'Video Call', link: 'https://meet.workflow360.app/ecom-kickoff', participants: ['Jidnyasa Girase', 'Sneha Joshi', 'Suresh Pillai'], status: 'upcoming', notes: 'Confirm scope, catalog structure and payment gateway.' },
+  { id: 'mtg-3', title: 'Design Review — Booking Portal', client: 'Coastal Hospitality Inc', project: 'Booking & Membership Portal', date: '2026-09-22', time: '17:00', type: 'In Person', link: null, participants: ['Sneha Joshi', 'Farhan Sheikh'], status: 'upcoming', notes: 'Walkthrough of the loyalty tier UI.' },
+  { id: 'mtg-4', title: 'Monthly Check-in — BrightPixel Labs', client: 'BrightPixel Labs', project: 'Corporate Website Redesign', date: '2026-09-10', time: '10:00', type: 'Video Call', link: 'https://meet.workflow360.app/brightpixel-checkin', participants: ['Jay Girase', 'Aditi Rao'], status: 'completed', notes: 'Reviewed milestone 2 delivery and next steps.' },
+  { id: 'mtg-5', title: 'Contract Renewal Discussion', client: 'Zenith Financial Group', project: null, date: '2026-09-02', time: '14:00', type: 'Phone Call', link: null, participants: ['Jidnyasa Girase', 'Ritu Malhotra'], status: 'completed', notes: 'Discussed retainer renewal for Q4.' },
+  { id: 'mtg-6', title: 'Payment Gateway Sandbox Walkthrough', client: 'Meridian Retail Pvt Ltd', project: 'E-commerce Platform', date: '2026-09-28', time: '12:00', type: 'Video Call', link: 'https://meet.workflow360.app/razorpay-sandbox', participants: ['Amit Kulkarni', 'Tanvi Deshpande', 'Suresh Pillai'], status: 'upcoming', notes: 'Walk through Razorpay UPI and card test flows before UAT.' },
+  { id: 'mtg-7', title: 'UAT Planning — Mobile App', client: 'InnoSoft Systems', project: 'Mobile Application — InnoSoft', date: '2026-09-30', time: '16:00', type: 'Phone Call', link: null, participants: ['Jay Girase', 'Rohit Girase', 'Neha Kapoor'], status: 'upcoming', notes: 'Agree UAT scope, device matrix and sign-off owners.' },
+  { id: 'mtg-8', title: 'Quarterly Business Review', client: 'Zenith Financial Group', project: null, date: '2026-10-05', time: '11:30', type: 'In Person', link: null, participants: ['Jidnyasa Girase', 'Jay Girase', 'Ritu Malhotra'], status: 'upcoming', notes: 'Q2 delivery summary, invoicing review and Q4 roadmap.' },
+  { id: 'mtg-9', title: 'Requirements Workshop — Membership Tiers', client: 'Coastal Hospitality Inc', project: 'Booking & Membership Portal', date: '2026-09-15', time: '10:30', type: 'In Person', link: null, participants: ['Sneha Joshi', 'Amit Kulkarni', 'Farhan Sheikh'], status: 'completed', notes: 'Finalised loyalty tiers: Silver, Gold and Platinum with points expiry rules.' },
+  { id: 'mtg-10', title: 'Onboarding Call — Nimbus Freight', client: 'Nimbus Freight', project: null, date: '2026-09-18', time: '15:00', type: 'Video Call', link: 'https://meet.workflow360.app/nimbus-onboarding', participants: ['Jidnyasa Girase', 'Pooja Nair'], status: 'cancelled', notes: 'Cancelled by client — rescheduling after their GST audit.' },
+]
+
+export function getMeetingById(id) {
+  return meetings.find((m) => m.id === id)
+}

@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Type system: Inter everywhere. */
+  --font-sans: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Brand — fresh teal */
+  --color-brand-50: #effcf9;
+  --color-brand-100: #d3f7ef;
+  --color-brand-200: #a9ede0;
+  --color-brand-300: #74dccb;
+  --color-brand-400: #3fc4b1;
+  --color-brand-500: #1aa996;
+  --color-brand-600: #0f8c7d;
+  --color-brand-700: #0f7066;
+  --color-brand-800: #0f5a53;
+  --color-brand-900: #10494a;
+  --color-brand-950: #062d2f;
+
+  /* Accent — warm rose */
+  --color-accent-50: #fff1f5;
+  --color-accent-100: #ffe1ea;
+  --color-accent-200: #ffc7d8;
+  --color-accent-300: #ff9dba;
+  --color-accent-400: #f96c98;
+  --color-accent-500: #ec4a7d;
+  --color-accent-600: #d92e65;
+  --color-accent-700: #b52152;
+  --color-accent-800: #941f48;
+  --color-accent-900: #7c1f41;
+
+  /* Semantic */
+  --color-success-50: #ecfdf3;
+  --color-success-100: #d1fae0;
+  --color-success-200: #a6f0c6;
+  --color-success-300: #6ddc9b;
+  --color-success-400: #3cc077;
+  --color-success-500: #22a559;
+  --color-success-600: #178246;
+  --color-success-700: #12663a;
+
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #f9b824;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #c77d08;
+  --color-warning-700: #9a5f0a;
+
+  --color-danger-50: #fff1f0;
+  --color-danger-100: #ffe0dd;
+  --color-danger-200: #ffc2bc;
+  --color-danger-300: #fb9a91;
+  --color-danger-400: #f26f63;
+  --color-danger-500: #e04a3c;
+  --color-danger-600: #c0372b;
+  --color-danger-700: #9b2c22;
+
+  /* Info — soft violet (no blue anywhere in the UI) */
+  --color-info-50: #f5f1ff;
+  --color-info-100: #ebe3ff;
+  --color-info-200: #d6c6ff;
+  --color-info-300: #bba0fb;
+  --color-info-400: #9f78f5;
+  --color-info-500: #8654ec;
+  --color-info-600: #6d3fd2;
+
+  /* Neutral scale — warm, slightly green-tinted greys (no blue cast) */
+  --color-ink-50: #f7f8f6;
+  --color-ink-100: #eff1ee;
+  --color-ink-200: #e2e6e1;
+  --color-ink-300: #cbd1cb;
+  --color-ink-400: #a0a9a2;
+  --color-ink-500: #737e76;
+  --color-ink-600: #565f58;
+  --color-ink-700: #3f4741;
+  --color-ink-800: #2b332d;
+  --color-ink-900: #1f2622;
+  --color-ink-950: #171d1a;
+
+  --shadow-card: 0 1px 2px 0 rgb(31 38 34 / 0.04), 0 2px 8px -2px rgb(31 38 34 / 0.06);
+  --shadow-card-hover: 0 10px 24px -8px rgb(var(--glow-c) / 0.22), 0 4px 10px -4px rgb(31 38 34 / 0.08);
+  --shadow-panel: 0 16px 40px -12px rgb(31 38 34 / 0.22), 0 4px 12px -4px rgb(31 38 34 / 0.08);
+  --shadow-glow: 0 8px 24px -6px rgb(var(--glow-a) / 0.45);
+
+  --animate-fade-in: fade-in 0.4s ease-out both;
+  --animate-slide-up: slide-up 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-scale-in: scale-in 0.18s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-toast-in: toast-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 1.6s linear infinite;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scale-in {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes toast-in {
+    from { opacity: 0; transform: translateX(24px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes shimmer {
+    from { background-position: -200% 0; }
+    to { background-position: 200% 0; }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+.dark {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-ink-50);
+  color: var(--color-ink-800);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.dark body {
+  background-color: var(--color-ink-950);
+  color: var(--color-ink-100);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+* {
+  border-color: var(--color-ink-200);
+}
+.dark * {
+  border-color: var(--color-ink-800);
+}
+
+::selection {
+  background-color: var(--color-brand-200);
+  color: var(--color-brand-900);
+}
+
+
+/* ---- Per-dashboard colour identities -------------------------------------
+   Admin keeps the default teal + rose. The employee and client dashboards
+   remap the brand/accent tokens so every component (buttons, nav, charts
+   tiles, gradients, focus rings) picks up its own palette. DashboardLayout
+   sets data-panel on <html> so portalled UI (modals, dropdowns) follows too. */
+:root {
+  --glow-a: 26 169 150;
+  --glow-b: 236 74 125;
+  --glow-c: 15 140 125;
+}
+
+/* Employee — orchid + marigold */
+[data-panel="employee"] {
+  --color-brand-50: #fbf3fe;
+  --color-brand-100: #f5e3fd;
+  --color-brand-200: #ebc8fa;
+  --color-brand-300: #dc9ff3;
+  --color-brand-400: #c771e8;
+  --color-brand-500: #ad4bd4;
+  --color-brand-600: #9438b9;
+  --color-brand-700: #782d96;
+  --color-brand-800: #612778;
+  --color-brand-900: #4f2360;
+  --color-brand-950: #331042;
+
+  --color-accent-50: #fffaeb;
+  --color-accent-100: #fef1c7;
+  --color-accent-200: #fde28a;
+  --color-accent-300: #fbcd50;
+  --color-accent-400: #f9b724;
+  --color-accent-500: #ec9a0c;
+  --color-accent-600: #cc7a08;
+  --color-accent-700: #a25c0b;
+  --color-accent-800: #834910;
+  --color-accent-900: #6c3d11;
+
+  --glow-a: 173 75 212;
+  --glow-b: 249 183 36;
+  --glow-c: 148 56 185;
+}
+
+/* Client — sunset orange + teal */
+[data-panel="client"] {
+  --color-brand-50: #fff6ee;
+  --color-brand-100: #ffe8d3;
+  --color-brand-200: #ffcfa6;
+  --color-brand-300: #ffae70;
+  --color-brand-400: #fb8a3c;
+  --color-brand-500: #f26d17;
+  --color-brand-600: #d95a0d;
+  --color-brand-700: #b3470e;
+  --color-brand-800: #8f3a12;
+  --color-brand-900: #753212;
+  --color-brand-950: #401807;
+
+  --color-accent-50: #effcf9;
+  --color-accent-100: #d3f7ef;
+  --color-accent-200: #a9ede0;
+  --color-accent-300: #74dccb;
+  --color-accent-400: #3fc4b1;
+  --color-accent-500: #1aa996;
+  --color-accent-600: #0f8c7d;
+  --color-accent-700: #0f7066;
+  --color-accent-800: #0f5a53;
+  --color-accent-900: #10494a;
+
+  --glow-a: 242 109 23;
+  --glow-b: 26 169 150;
+  --glow-c: 217 90 13;
+}
+
+/* ---- Design system helpers ---- */
+.gradient-brand {
+  background-image: linear-gradient(135deg, var(--color-brand-400) 0%, var(--color-brand-600) 100%);
+}
+.gradient-accent {
+  background-image: linear-gradient(135deg, var(--color-accent-400) 0%, var(--color-accent-600) 100%);
+}
+.gradient-hero {
+  /* teal base with a rose glow layered on top — avoids the muddy mid-tone of a straight teal→rose blend */
+  background-color: var(--color-brand-600);
+  background-image:
+    radial-gradient(60% 90% at 100% 0%, rgb(var(--glow-b) / 0.55), transparent 65%),
+    linear-gradient(135deg, var(--color-brand-500) 0%, var(--color-brand-700) 100%);
+}
+.gradient-soft {
+  background-image: linear-gradient(135deg, var(--color-brand-50) 0%, #ffffff 55%, var(--color-accent-50) 100%);
+}
+.dark .gradient-soft {
+  background-image: linear-gradient(135deg, rgb(var(--glow-a) / 0.10) 0%, transparent 55%, rgb(var(--glow-b) / 0.08) 100%);
+}
+.text-gradient {
+  background-image: linear-gradient(100deg, var(--color-brand-600) 0%, var(--color-brand-500) 45%, var(--color-accent-500) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.bg-app {
+  background-color: var(--color-ink-50);
+  background-image:
+    radial-gradient(60rem 28rem at 100% -10%, rgb(var(--glow-a) / 0.08), transparent 60%),
+    radial-gradient(48rem 26rem at -10% 0%, rgb(var(--glow-b) / 0.05), transparent 60%);
+}
+.dark .bg-app {
+  background-color: var(--color-ink-950);
+  background-image:
+    radial-gradient(60rem 28rem at 100% -10%, rgb(var(--glow-a) / 0.10), transparent 60%),
+    radial-gradient(48rem 26rem at -10% 0%, rgb(var(--glow-b) / 0.06), transparent 60%);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-ink-300);
+  border-radius: 999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background-color: var(--color-ink-700);
+}
+
+.skeleton {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-ink-100) 25%,
+    var(--color-ink-200) 37%,
+    var(--color-ink-100) 63%
+  );
+  background-size: 400% 100%;
+  animation: var(--animate-shimmer);
+}
+.dark .skeleton {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-ink-800) 25%,
+    var(--color-ink-700) 37%,
+    var(--color-ink-800) 63%
+  );
+}
+
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+/* ---- Shared UI kit additions (layouts, overlays, a11y) ---- */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes sheet-up {
+  from { opacity: 0.6; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes drawer-in-right {
+  from { opacity: 0.6; transform: translateX(32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes drawer-in-left {
+  from { opacity: 0.6; transform: translateX(-32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.page-enter { animation: page-enter 0.32s cubic-bezier(0.16, 1, 0.3, 1) backwards; }
+.sheet-enter { animation: sheet-up 0.28s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.drawer-enter-right { animation: drawer-in-right 0.28s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.drawer-enter-left { animation: drawer-in-left 0.28s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* Skip-to-content link: visible only on keyboard focus */
+.skip-link {
+  position: fixed;
+  left: 12px;
+  top: 12px;
+  z-index: 200;
+  transform: translateY(-200%);
+  border-radius: 0.5rem;
+  background: var(--color-brand-600);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Visible keyboard focus for every interactive element (lowest priority so
+   component-level focus styles still win). */
+@layer base {
+  :where(a, button, input, select, textarea, summary, [role="button"], [role="tab"], [role="menuitem"], [role="radio"], [tabindex]):focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+  }
+  [data-autofocus-target]:focus,
+  main:focus {
+    outline: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Design system: form controls, cards, motion helpers ---- */
+@layer components {
+  /* Shared look for Input / Select / Textarea / SearchBar */
+  .field-control {
+    @apply w-full min-w-0 rounded-xl border border-ink-200 bg-white px-3.5 text-sm text-ink-800 shadow-xs outline-none;
+    @apply placeholder:text-ink-400 transition-[border-color,box-shadow,background-color] duration-200;
+    @apply hover:border-ink-300 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15;
+    @apply disabled:cursor-not-allowed disabled:bg-ink-50 disabled:text-ink-400;
+    @apply dark:border-ink-700 dark:bg-ink-900 dark:text-ink-100 dark:hover:border-ink-600 dark:focus:border-brand-400 dark:focus:ring-brand-400/20 dark:disabled:bg-ink-800/50;
+  }
+  .field-control[aria-invalid="true"] {
+    @apply border-danger-400 bg-danger-50/40 hover:border-danger-500 focus:border-danger-500 focus:ring-danger-500/15 dark:border-danger-500/70 dark:bg-danger-500/5;
+  }
+  .card-pad {
+    padding: 1rem;
+  }
+  .card-head {
+    padding: 0.875rem 1rem;
+  }
+  @media (min-width: 640px) {
+    .card-pad { padding: 1.25rem; }
+    .card-head { padding: 1rem 1.25rem; }
+  }
+  @media (min-width: 1024px) {
+    .card-pad { padding: 1.5rem; }
+  }
+}
+
+@keyframes tab-indicator {
+  from { transform: scaleX(0.2); opacity: 0; }
+  to { transform: scaleX(1); opacity: 1; }
+}
+.tab-indicator {
+  transform-origin: center;
+  animation: tab-indicator 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes progress-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.progress-fill {
+  transform-origin: left center;
+  animation: progress-grow 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes item-slide {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.item-slide { animation: item-slide 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* Hide scrollbars on horizontally scrollable strips (tabs, chips, breadcrumbs) */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Frosted surface used by the topbar and floating panels */
+.glass {
+  background-color: rgb(255 255 255 / 0.78);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  backdrop-filter: saturate(160%) blur(14px);
+}
+.dark .glass {
+  background-color: rgb(23 29 26 / 0.78);
+}
+
+/* Interactive lift for any card-like element */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Never let a page scroll sideways */
+html, body {
+  overflow-x: clip;
+}
