@@ -109,7 +109,7 @@ const EMPLOYEE_ROLES = [ROLES.EMPLOYEE, ROLES.MANAGER, ROLES.SUPER_ADMIN, ROLES.
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ThemeProvider>
         <ToastProvider>
           <AuthProvider>
