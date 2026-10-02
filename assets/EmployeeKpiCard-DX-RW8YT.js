@@ -1,0 +1,1 @@
+import{i as e}from"./cn-BoAExs90.js";import{t}from"./KpiTile-C1trbHwT.js";import{t as n}from"./useCountUp-DqAArUVh.js";var r=e();function i({icon:e,label:i,value:a,format:o=e=>Math.round(e).toLocaleString(`en-IN`),hint:s,tone:c=`brand`,index:l=0,className:u}){let d=n(a);return(0,r.jsx)(t,{icon:e,label:i,value:o(d),hint:s,tone:c,index:l,className:u})}export{i as t};

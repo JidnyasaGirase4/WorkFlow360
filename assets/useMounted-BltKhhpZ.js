@@ -1,0 +1,1 @@
+import{a as e,c as t}from"./cn-BoAExs90.js";var n=t(e(),1);function r(){let[e,t]=(0,n.useState)(!1);return(0,n.useEffect)(()=>{let e=requestAnimationFrame(()=>t(!0));return()=>cancelAnimationFrame(e)},[]),e}export{r as t};

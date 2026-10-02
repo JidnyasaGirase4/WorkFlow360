@@ -1,0 +1,1 @@
+import{n as e}from"./employees-BfLCSzBT.js";import{t}from"./createMockService-CQGf3gej.js";var n=t(e,`id`);export{n as t};

@@ -1,0 +1,1 @@
+function e(e){if(!e)return null;if(e.includes(`T`)){let t=new Date(e);return t.getHours()*60+t.getMinutes()}let[t,n]=e.split(`:`).map(Number);return t*60+n}function t(t){let n=e(t.checkIn),r=e(t.checkOut);return n===null||r===null||r<n?0:r-n}function n(e){return e?`${Math.floor(e/60)}h ${String(e%60).padStart(2,`0`)}m`:`—`}export{t as n,n as t};

@@ -1,0 +1,1 @@
+import{a as e,n as t}from"./index-C4v6xWhL.js";import{t as n}from"./createMockService-CQGf3gej.js";var r=n(t,`id`),i=n(e,`id`);export{i as n,r as t};

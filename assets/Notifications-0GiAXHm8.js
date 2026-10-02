@@ -1,0 +1,1 @@
+import{i as e}from"./cn-BoAExs90.js";import{t}from"./NotificationCenter-xu8oYxLy.js";var n=e();function r(){return(0,n.jsx)(t,{homeHref:`/client/dashboard`,description:`Invoices, payments, support replies, milestones and meetings for your company.`})}export{r as default};

@@ -1,0 +1,1 @@
+import{o as e,s as t}from"./index-C4v6xWhL.js";import{t as n}from"./createMockService-CQGf3gej.js";var r=n(t,`id`),i=n(e,`id`);function a(){return`PAY-${r.getSnapshot().reduce((e,t)=>Math.max(e,Number(/PAY-(\d+)/.exec(t.number)?.[1])||0),1e3)+1}`}export{a as n,r,i as t};

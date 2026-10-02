@@ -1,0 +1,1 @@
+import{i as e}from"./cn-BoAExs90.js";import{t}from"./NotificationCenter-xu8oYxLy.js";var n=e();function r(){return(0,n.jsx)(t,{homeHref:`/employee/dashboard`,description:`Task assignments, meeting reminders and HR updates.`})}export{r as default};

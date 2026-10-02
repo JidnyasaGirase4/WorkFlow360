@@ -1,0 +1,1 @@
+import{t as e}from"./createMockService-CQGf3gej.js";import{t}from"./contacts-DKt64TCW.js";var n=e(t,`id`);export{n as t};

@@ -1,0 +1,1 @@
+import{i as e}from"./cn-BoAExs90.js";import{t}from"./KpiTile-C1trbHwT.js";var n=e();function r({icon:e,label:r,value:i,sub:a,tone:o=`brand`,index:s=0,className:c}){return(0,n.jsx)(t,{icon:e,label:r,value:i,hint:a,hintTone:o===`danger`?`danger`:void 0,tone:o,index:s,className:c})}export{r as t};

@@ -1,0 +1,1 @@
+var e=`2026-09-26`,t=`2026-09-25`;function n(e,t){let n=new Date(`${e}T00:00:00Z`);return n.setUTCDate(n.getUTCDate()+t),n.toISOString().slice(0,10)}function r(e,t){let n=new Date(`${e}T00:00:00Z`).getTime(),r=new Date(`${t}T00:00:00Z`).getTime();return Math.round((r-n)/864e5)}export{r as i,e as n,n as r,t};
